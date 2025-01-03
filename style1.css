@@ -1,0 +1,21 @@
+.container {
+  position: relative; /* Ensures the hidden content is positioned relative to this container */
+}
+
+.hidden-content {
+  display: none; /* Initially hidden */
+  position: absolute; /* Position relative to the container */
+  top: 100%; /* Appears below the button */
+  left: 0;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container:hover .hidden-content {
+  display: block; /* Make the hidden content visible when hovering */
+}
+
+

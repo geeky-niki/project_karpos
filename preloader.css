@@ -1,0 +1,92 @@
+
+/* Preloader Styles */
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+.ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #ff9800; /* Ring color */
+  animation: ring 3s linear infinite;
+}
+
+/* Keyframes for Ring Animation */
+@keyframes ring {
+  0% {
+      transform: rotate(0deg);
+      box-shadow: 1px 5px 2px #e65c00;
+  }
+  50% {
+      transform: rotate(180deg);
+      box-shadow: 1px 5px 2px #18b201;
+  }
+  100% {
+      transform: rotate(360deg);
+      box-shadow: 1px 5px 2px #0456c8;
+  }
+}
+
+.ring:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Preloader Text */
+.preloader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-family: 'Annie Use Your Telescope', sans-serif;
+  color: #ff9800;
+  text-align: center;
+  z-index: 2;
+  animation: revolvingText 4s linear infinite;
+}
+
+@keyframes revolvingText {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Loading Text inside the Ring */
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInOut 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+}
